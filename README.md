@@ -1,14 +1,10 @@
 # sicp
 Berkeley CS61A
 
-- Online textbook
-..- https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html
-- Course info
-..- https://people.eecs.berkeley.edu/~bh/61a-pages/
-- Link to lecture
-..- https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter
-- Running Scheme on
-..- https://repl.it
+- Online textbook: https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html
+- Course info: https://people.eecs.berkeley.edu/~bh/61a-pages/
+- Link to lecture: https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter
+- Running Scheme on: https://repl.it
 - Course solutions
-..- http://community.schemewiki.org/?sicp-solutions
-..- https://wizardbook.wordpress.com/solutions-index/
+...[1] http://community.schemewiki.org/?sicp-solutions
+...[2] https://wizardbook.wordpress.com/solutions-index/
