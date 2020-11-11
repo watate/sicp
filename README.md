@@ -5,6 +5,6 @@ Berkeley CS61A
 - Course info: https://people.eecs.berkeley.edu/~bh/61a-pages/
 - Link to lecture: https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter
 - Running Scheme on: https://repl.it
-- Course solutions
-...[1] http://community.schemewiki.org/?sicp-solutions
-...[2] https://wizardbook.wordpress.com/solutions-index/
+- Solutions
+  - http://community.schemewiki.org/?sicp-solutions
+  - https://wizardbook.wordpress.com/solutions-index/
