@@ -6,7 +6,7 @@
         ((< n 3) n)
         ((= n 3) x)
         (else (foo-iter (- n 1) (+ x (* 2 a) (* 3 b)) x a b))))
-
+    
 (foo 3)
 
 ;(foo 5) ;25
