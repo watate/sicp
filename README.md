@@ -16,7 +16,7 @@ Berkeley CS61A
 
 # progress
 ## SICP
-Current Page: 44
+Current Page: 46
 - [x] Building Abstractions with Procedures
 - [ ] Building Abstractions with Data
 - [ ] Modularity, Objects, and State
@@ -33,4 +33,4 @@ Current Page: 44
 - [ ] 4A: Pattern Matching and Rule-based Substitution
 - [ ] 4B: Generic Operators
 - [ ] 5A: Assignment, State, and Side-effects
-- ...
+- [ ] ...
