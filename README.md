@@ -23,7 +23,7 @@ Current Page: 46
 - [ ] Metalinguistic Abstraction
 - [ ] Computing with Register Machines
 
-## MIT6.001 1A
+## MIT6.001
 - [x] 1A: Overview and Introduction to Lisp
 - [ ] 1B: Procedures and Processes; Substitution Model
 - [ ] 2A: Higher-order Procedures
