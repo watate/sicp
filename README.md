@@ -1,5 +1,4 @@
 # sicp
-Berkeley CS61A
 
 # resources
 - Online textbook: https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html
@@ -16,7 +15,7 @@ Berkeley CS61A
 
 # progress
 ## SICP
-Current Page: 46
+Current Page: 50
 - [x] Building Abstractions with Procedures
 - [ ] Building Abstractions with Data
 - [ ] Modularity, Objects, and State
