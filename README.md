@@ -12,10 +12,13 @@
 
 # notes
 - on recursion: https://stackoverflow.com/questions/27803152/sicp-example-counting-change-cannot-understand
+- BiwaScheme interpreter reads "mod" instead of "remainder"
+- On Fermat's Test: https://stackoverflow.com/questions/64672675/mathematically-why-does-this-sicp-algorithm-for-the-exponent-of-a-number-modulo
+
 
 # progress
 ## SICP
-Current Page: 50
+Current Page: 53
 - [x] Building Abstractions with Procedures
 - [ ] Building Abstractions with Data
 - [ ] Modularity, Objects, and State
