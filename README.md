@@ -12,8 +12,12 @@
 
 # notes
 - on recursion: https://stackoverflow.com/questions/27803152/sicp-example-counting-change-cannot-understand
-- BiwaScheme interpreter reads "mod" instead of "remainder"
 - On Fermat's Test: https://stackoverflow.com/questions/64672675/mathematically-why-does-this-sicp-algorithm-for-the-exponent-of-a-number-modulo
+
+# on BiwaScheme interpreter
+- Run SICP on BiwaScheme: https://www.biwascheme.org/doc/sicp.html
+- mod -> remainder
+- random-integer -> random
 
 
 # progress
