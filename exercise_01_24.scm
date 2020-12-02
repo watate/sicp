@@ -31,23 +31,16 @@
     (start-prime-test n (runtime)))
 
 (define (start-prime-test n start-time)
-    (if (prime? n)
+    (if (prime-two? n)
     (report-prime (- (runtime) start-time))))
 
 (define (report-prime elapsed-time)
     (display " *** ")
     (display elapsed-time))
 
-(define (smallest-divisor n)
-        (find-divisor n 2))
-
-(define (find-divisor n test-divisor)
-    (cond ((> (square test-divisor) n) n)
-          ((= (mod n test-divisor) 0) test-divisor)
-          (else (find-divisor n (+ test-divisor 1)))))
-
-(define (prime? n)
-    (= n (smallest-divisor n)))
+(define (next n)
+  (cond ((= n 2) 3)
+        (else (+ n 2))))
 
 (define (prime-two? n)
     (define (fast-prime? n times)
@@ -71,38 +64,37 @@
     
     (fast-prime? n 10))
 
-(define (search-for-primes n)
-    (define (search-it x)
-        (cond ((even? x) (search-it (+ x 1)))
-              ((prime-two? x) (timed-prime-test x))
-              (else (search-it (+ x 2))))
+(define (search-for-primes lower upper)
+    (define (search-it n)
+        (cond ((even? n) (search-it (+ n 1)))
+              ((< n upper) (timed-prime-test n) (search-it (+ n 2)))
+        )
     )
-    (search-it (+ n 1)))
+    (search-it (+ lower 1)))
 
-(search-for-primes 1000)
+(search-for-primes 1000 1100)
 
-;1009 *** 1
-;1013 *** 2
-;1019 *** 1
+; 1009 *** 7
+; 1013 *** 6
+; 1019 *** 9
 
-;10007 *** 4
-;10009 *** 4
-;10037 *** 4
+; 10007 *** 12
+; 10009 *** 8
+; 10037 *** 18
 
-;100003 *** 11
-;100019 *** 13
-;100043 *** 10
+; 100003 *** 14
+; 100019 *** 12
+; 100043 *** 11
 
-;1000003 *** 32
-;1000033 *** 35
-;1000037 *** 34
+; 1000003 *** 18
+; 1000033 *** 13
+; 1000037 *** 13
 
-;Timing data do indicate that testing algorithm has order of growth of Theta(root(n))
-;Result is compatible with the notion that programs on machine run in time proportional to
-    ;the number of steps required for computation
-
-;model answer
-; (define (search-for-primes lower upper) 
-; (define (iter n) 
-;  (cond ((<= n upper) (timed-prime-test n) (iter (+ n 2))))) 
-; (iter (if (odd? lower) lower (+ lower 1)))) 
+;log(1,000,000) / log(1,000) = 2
+;Data does seem to bear out this growth
+;Model answer:
+  ; If the function ran in logarithmic time, 
+  ; we would expect running time to be linear in the number of digits, 
+  ; but the growth is faster than that. 
+  ; This is probably because performing primitive operations 
+  ; on sufficiently large numbers is not constant time, but grows with the size of the number.

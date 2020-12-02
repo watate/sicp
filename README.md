@@ -22,7 +22,7 @@
 
 # progress
 ## SICP
-Current Page: 53
+Current Page: 55
 - [x] Building Abstractions with Procedures
 - [ ] Building Abstractions with Data
 - [ ] Modularity, Objects, and State

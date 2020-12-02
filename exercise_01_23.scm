@@ -39,12 +39,16 @@
     (display elapsed-time))
 
 (define (smallest-divisor n)
-        (find-divisor n 2))
+    (find-divisor n 2))
 
 (define (find-divisor n test-divisor)
     (cond ((> (square test-divisor) n) n)
           ((= (mod n test-divisor) 0) test-divisor)
-          (else (find-divisor n (+ test-divisor 1)))))
+          (else (find-divisor n (next test-divisor)))))
+
+(define (next n)
+  (cond ((= n 2) 3)
+        (else (+ n 2))))
 
 (define (prime? n)
     (= n (smallest-divisor n)))
@@ -71,38 +75,33 @@
     
     (fast-prime? n 10))
 
-(define (search-for-primes n)
-    (define (search-it x)
-        (cond ((even? x) (search-it (+ x 1)))
-              ((prime-two? x) (timed-prime-test x))
-              (else (search-it (+ x 2))))
+(define (search-for-primes lower upper)
+    (define (search-it n)
+        (cond ((even? n) (search-it (+ n 1)))
+              ((< n upper) (timed-prime-test n) (search-it (+ n 2)))
+        )
     )
-    (search-it (+ n 1)))
+    (search-it (+ lower 1)))
 
-(search-for-primes 1000)
+(search-for-primes 1000 1100)
 
-;1009 *** 1
-;1013 *** 2
-;1019 *** 1
+; 1009 *** 1
+; 1013 *** 1
+; 1019 *** 2
 
-;10007 *** 4
-;10009 *** 4
-;10037 *** 4
+; 10007 *** 8
+; 10009 *** 4
+; 10037 *** 3
 
-;100003 *** 11
-;100019 *** 13
-;100043 *** 10
+; 100003 *** 10
+; 100019 *** 5
+; 100043 *** 8
 
-;1000003 *** 32
-;1000033 *** 35
-;1000037 *** 34
+; 1000003 *** 23
+; 1000033 *** 23
+; 1000037 *** 21
 
-;Timing data do indicate that testing algorithm has order of growth of Theta(root(n))
-;Result is compatible with the notion that programs on machine run in time proportional to
-    ;the number of steps required for computation
-
-;model answer
-; (define (search-for-primes lower upper) 
-; (define (iter n) 
-;  (cond ((<= n upper) (timed-prime-test n) (iter (+ n 2))))) 
-; (iter (if (odd? lower) lower (+ lower 1)))) 
+;No it did not run twice as fast.
+;The observed ratio is about 3:2
+;Model answer: This is mainly due to the NEXT procedure's IF test
+  ;The input did halve indeed, but we need to do an extra IF test.
