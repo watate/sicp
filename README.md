@@ -12,7 +12,7 @@
 
 # notes
 - on recursion: https://stackoverflow.com/questions/27803152/sicp-example-counting-change-cannot-understand
-- On Fermat's Test: https://stackoverflow.com/questions/64672675/mathematically-why-does-this-sicp-algorithm-for-the-exponent-of-a-number-modulo
+- on Fermat's Test: https://stackoverflow.com/questions/64672675/mathematically-why-does-this-sicp-algorithm-for-the-exponent-of-a-number-modulo
 
 # on BiwaScheme interpreter
 - Run SICP on BiwaScheme: https://www.biwascheme.org/doc/sicp.html
@@ -22,7 +22,7 @@
 
 # progress
 ## SICP
-Current Page: 55
+Current Page: 60
 - [x] Building Abstractions with Procedures
 - [ ] Building Abstractions with Data
 - [ ] Modularity, Objects, and State
