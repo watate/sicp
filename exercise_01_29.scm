@@ -25,6 +25,8 @@
 (define (runtime) (date2runtime (current-date)))
 
 ;MAIN
+(define (cube x)
+  (* x x x))
 (define (sum term a next b)
   (if (> a b)
     0
@@ -35,7 +37,16 @@
   (define h (/ (- b a) n))
   (define (y k)
     (f (+ a (* k h))))
-  (define (next-a x)
-    (+ x (y )))
-  (* (/ h 3) (+ (y 0) (y n) 
-              (* 2 (sum f 1 next (/ n 2))))
+  (define (next x)
+    (+ x h h))
+  (* (/ h 3) (+ (f a) (f b)
+              (* 4 (sum f (+ a h) next b))
+              (* 2 (sum f (next a) next (- b h))))))
+
+(simpsons-integral cube 0 1 100) ;0.25000000000000044
+;(simpsons-integral cube 0 1 1000) ;0.25000000000000083
+
+;Comparing with
+  ;(integral cube 0 1 0.01) .24998750000000042
+  ;(integral cube 0 1 0.001) .249999875000001
+  ;It seems like my procedure is less accurate?
