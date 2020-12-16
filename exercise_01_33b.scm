@@ -25,24 +25,10 @@
 (define (runtime) (date2runtime (current-date)))
 
 ;MAIN
-(define (prime? n)
-    (define (fast-prime? n a)
-        (cond ((= 0 a) true)
-              ((fermat-test-alt n a) (fast-prime? n (- a 1)))
-              (else false)))
-    (define (fermat-test-alt n a)
-            (= (expmod a (- n 1) n) 1))
-    (define (expmod base exp m)
-        (cond ((= exp 0) 1)
-              ((even? exp)
-                ;modification here
-                (if (= (mod exp m) 1) 0 
-                  (mod (square (expmod base (/ exp 2) m)) m)))
-              (else
-                (mod
-                (* base (expmod base (- exp 1) m))
-                m))))
-    (if (= n 1) #f (fast-prime? n (- n 1))))
+(define (gcd a b)
+    (if (= b 0)
+        a
+        (gcd b (mod a b))))
 
 (define (filtered-accumulate filter combiner null-value term a next b)
     (define (iter a result)
@@ -56,9 +42,13 @@
 (define (increment x)
     (+ x 1))
 
-;sum of squares of the prime numbers in the interval a to b
-(define (sum-squared-primes a b)
-    (filtered-accumulate prime? + 0 square a increment b))
+(define (identity x) x)
 
-(sum-squared-primes 1 10) ;87
-;(sum-squared-primes 1 5) ;38
+(define (relatively-prime-products n)
+  (define (relatively-prime x)
+  (if (= (gcd n x) 1)
+      #t
+      #f))
+  (filtered-accumulate relatively-prime * 1 identity 1 increment n))
+
+(relatively-prime-products 5)
